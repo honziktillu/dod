@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand pose App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./res/css/style.css" />
+    <!-- Require the peer dependencies of handpose. -->
+    <script src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs-converter@2.1.0/dist/tf-converter.js"></script>
+
+    <!-- You must explicitly require a TF.js backend if you're not using the tfs union bundle. -->
+    <script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
+    <!-- Alternatively you can use the WASM backend: <script src="https://unpkg.com/@tensorflow/tfjs-backend-wasm@2.1.0/dist/tf-backend-wasm.js"></script> -->
+
+    <script src="https://unpkg.com/@tensorflow-models/handpose@0.0.6/dist/handpose.js"></script>
+    <script
+      src="./node_modules/fingerpose/dist/fingerpose.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <section class="hero is-fullheight is-default is-bold">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <img src="./res/img/logo.png" id="logo" alt="Logo" />
+              <span class="navbar-burger burger" data-target="navbarMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+              <div class="navbar-end">
+                <div class="tabs is-right">
+                  <ul>
+                    <li class="is-active"><a>HPD</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <div class="video">
+                <div id="video-container">
+                  <video id="pose-video" class="layer" playsinline></video>
+                  <canvas id="pose-canvas" class="layer"></canvas>
+                  <div id="pose-result" class="layer"></div>
+                </div>
+              </div>
+            </div>
+            <div class="column info-div">
+              <h1 id="title" class="title is-2">Hand Pose Detection</h1>
+              <h2 class="subtitle is-4">
+                Tato aplikace detekuje různé pozice rukou
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <div class="container">
+          <div class="tabs is-centered">
+            <ul>
+              <li><a>Vytvořil @prostehonzatillu</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="./res/js/main.js"></script>
+  </body>
+</html>
