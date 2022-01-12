@@ -131,20 +131,7 @@ async function main() {
             document.body.style.background = "white";
             changed = false;
           }, delay * 2);
-        } else if (result.name === "thumbs_up" && !changed) {
-          document.body.style.background = "url(./res/img/rick-roll.gif)";
-          document.body.style.backgroundSize = "cover";
-          changed = true;
-          firstRun = false;
-          song.src = "./res/songs/6.mp3";
-          currentSong = "Rick Roll";
-          title.innerText = `Zrovna hraje: ${currentSong}`;
-          song.play();
-          setTimeout(() => {
-            document.body.style.background = "white";
-            changed = false;
-          }, delay * 2);
-        }
+        } 
       }
     }
 
